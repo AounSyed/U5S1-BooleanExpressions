@@ -13,8 +13,17 @@ public class AlgoChallenge {
      */
 
     public static Boolean startWithIx(String phrase) {
+        boolean yes = false;
+        char hasI = phrase.charAt(1);
+        char hasX = phrase.charAt(2);
+        String isMix = phrase.substring(0,2);
 
-        return null;
+        if (isMix.equals("mix") || hasI == 'i' && hasX == 'x')
+            yes = true;
+        else
+            yes = false;
+
+        return yes;
     }
 
      /* Problem 1
@@ -29,8 +38,19 @@ public class AlgoChallenge {
      */
 
     public static Integer near10(int one, int two){
+        int subtract10 = Math.abs(one - 10);
+        int subtract10two = Math.abs(two - 10);
+        int answer = 0;
 
-        return null;
+
+        if (subtract10 == subtract10two)
+            answer = 0;
+        else if (subtract10 < subtract10two)
+            answer = one;
+        else if (subtract10two < subtract10)
+            answer = two;
+
+        return answer;
     }
 
 }
